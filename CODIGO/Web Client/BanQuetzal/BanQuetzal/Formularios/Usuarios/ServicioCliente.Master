@@ -1,0 +1,97 @@
+﻿<%@ Master Language="C#" AutoEventWireup="true" CodeBehind="ServicioCliente.master.cs" Inherits="BanQuetzal.Formularios.Usuarios.ServicioCliente" %>
+
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
+<!--
+Design by TEMPLATED
+http://templated.co
+Released for free under the Creative Commons Attribution License
+
+Name       : Veridical 
+Description: A two-column, fixed-width design with dark color scheme.
+Version    : 1.0
+Released   : 20131203
+
+-->
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head runat="server">
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+<title></title>
+<meta name="keywords" content="" />
+<meta name="description" content="" />
+<link href="http://fonts.googleapis.com/css?family=Source+Sans+Pro:200,300,400,600,700,900" rel="stylesheet" />
+<link href="default.css" rel="stylesheet" type="text/css" media="all" />
+<link href="fonts.css" rel="stylesheet" type="text/css" media="all" />
+
+<!--[if IE 6]><link href="default_ie6.css" rel="stylesheet" type="text/css" /><![endif]-->
+
+</head>
+<body>
+    
+    <form id="form1" runat="server">
+<div id="header-wrapper">
+	<div id="header" class="container">
+		<div id="menu">
+			<ul>
+				<li><a href="InicioServicio.aspx" accesskey="1" title="">Inicio</a></li>
+				<li class="current_page_item"></li>
+				<li>
+                    <asp:Menu ID="Menu1" runat="server" OnMenuItemClick="Menu1_MenuItemClick">
+                    <Items>
+                        <asp:MenuItem Text="Cliente" Value="Registrar Cliente">
+                            <asp:MenuItem Text="Crear Particular" Value="Particular"></asp:MenuItem>
+                            <asp:MenuItem Text="Crear Empresarial" Value="Empresarial"></asp:MenuItem>
+                            <asp:MenuItem Text="Recuperar Clave" Value="rClave"></asp:MenuItem>
+                        </asp:MenuItem>
+                    </Items>
+                    </asp:Menu>
+                </li>
+				<li>
+                    <asp:Menu ID="Menu2" runat="server" OnMenuItemClick="Menu2_MenuItemClick">
+                    <Items>
+                        <asp:MenuItem Text="Cuenta" Value="Crear Cuenta">
+                            <asp:MenuItem Text="Crear cuenta particular" Value="Particular"></asp:MenuItem>
+                            <asp:MenuItem Text="Crear cuenta empresarial" Value="Nomina"></asp:MenuItem>
+                            <asp:MenuItem Text="Estado de Cuenta" Value="estadoCta"></asp:MenuItem>
+                            <asp:MenuItem Text="Solicitar Chequera" Value="solicitarCk"></asp:MenuItem>
+                            <asp:MenuItem Text="Activar/Desactivar" Value="adCuenta"></asp:MenuItem>
+                        </asp:MenuItem>
+                    </Items>
+                    </asp:Menu>
+                </li>
+				<li></li>
+				<asp:Menu ID="Menu4" runat="server" OnMenuItemClick="Menu4_MenuItemClick">
+                    <Items>
+                        <asp:MenuItem Text="Prestamos" Value="Prestamos">
+                            <asp:MenuItem Text="Solicitar Prestamo" Value="sPrestamo"></asp:MenuItem>
+                        </asp:MenuItem>
+                    </Items>
+                </asp:Menu>
+				<li>
+                    <asp:Menu ID="Menu3" runat="server" OnMenuItemClick="Menu3_MenuItemClick">
+                        <Items>
+                            <asp:MenuItem Text="Cuenta" Value="config">
+                                <asp:MenuItem Text="Cambiar clave" Value="cClave"></asp:MenuItem>
+                                <asp:MenuItem Text="Cambiar Usuario" Value="cUsuario"></asp:MenuItem>
+                            </asp:MenuItem>
+                        </Items>
+                    </asp:Menu>
+                </li>
+			    <asp:Button ID="Button1" runat="server" OnClick="Button1_Click" Text="Salir" />
+			</ul>
+		</div>
+		
+	</div>
+</div>
+<div id="wrapper2">
+    
+	<div id="featured" class="container">
+		
+	    <asp:ContentPlaceHolder ID="ContentPlaceHolder1" runat="server">
+        </asp:ContentPlaceHolder>
+		
+	</div>
+    
+</div>
+    </form>
+</body>
+</html>

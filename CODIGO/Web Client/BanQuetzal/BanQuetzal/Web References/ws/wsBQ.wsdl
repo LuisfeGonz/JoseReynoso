@@ -1,0 +1,607 @@
+<?xml version="1.0" encoding="utf-8"?>
+<definitions xmlns:wsp="http://www.w3.org/ns/ws-policy" xmlns:xsd="http://www.w3.org/2001/XMLSchema" xmlns:wsam="http://www.w3.org/2007/05/addressing/metadata" xmlns:tns="http://wsBQ/" xmlns:soap="http://schemas.xmlsoap.org/wsdl/soap/" xmlns:wsp1_2="http://schemas.xmlsoap.org/ws/2004/09/policy" xmlns:wsu="http://docs.oasis-open.org/wss/2004/01/oasis-200401-wss-wssecurity-utility-1.0.xsd" name="wsBQ" targetNamespace="http://wsBQ/" xmlns="http://schemas.xmlsoap.org/wsdl/">
+  <types>
+    <xsd:schema>
+      <xsd:import schemaLocation="http://localhost:8080/BanQuetzal/wsBQ?xsd=1" namespace="http://wsBQ/" />
+    </xsd:schema>
+  </types>
+  <message name="Prestamo">
+    <part name="parameters" element="tns:Prestamo" />
+  </message>
+  <message name="PrestamoResponse">
+    <part name="parameters" element="tns:PrestamoResponse" />
+  </message>
+  <message name="getEstadoCuenta">
+    <part name="parameters" element="tns:getEstadoCuenta" />
+  </message>
+  <message name="getEstadoCuentaResponse">
+    <part name="parameters" element="tns:getEstadoCuentaResponse" />
+  </message>
+  <message name="loginCliente">
+    <part name="parameters" element="tns:loginCliente" />
+  </message>
+  <message name="loginClienteResponse">
+    <part name="parameters" element="tns:loginClienteResponse" />
+  </message>
+  <message name="cambiarClave">
+    <part name="parameters" element="tns:cambiarClave" />
+  </message>
+  <message name="cambiarClaveResponse">
+    <part name="parameters" element="tns:cambiarClaveResponse" />
+  </message>
+  <message name="getTipoCuenta">
+    <part name="parameters" element="tns:getTipoCuenta" />
+  </message>
+  <message name="getTipoCuentaResponse">
+    <part name="parameters" element="tns:getTipoCuentaResponse" />
+  </message>
+  <message name="crearEncargado">
+    <part name="parameters" element="tns:crearEncargado" />
+  </message>
+  <message name="crearEncargadoResponse">
+    <part name="parameters" element="tns:crearEncargadoResponse" />
+  </message>
+  <message name="crearCuenta">
+    <part name="parameters" element="tns:crearCuenta" />
+  </message>
+  <message name="crearCuentaResponse">
+    <part name="parameters" element="tns:crearCuentaResponse" />
+  </message>
+  <message name="crearClienteParticular">
+    <part name="parameters" element="tns:crearClienteParticular" />
+  </message>
+  <message name="crearClienteParticularResponse">
+    <part name="parameters" element="tns:crearClienteParticularResponse" />
+  </message>
+  <message name="getTipoEmpleado">
+    <part name="parameters" element="tns:getTipoEmpleado" />
+  </message>
+  <message name="getTipoEmpleadoResponse">
+    <part name="parameters" element="tns:getTipoEmpleadoResponse" />
+  </message>
+  <message name="getTipoCliente">
+    <part name="parameters" element="tns:getTipoCliente" />
+  </message>
+  <message name="getTipoClienteResponse">
+    <part name="parameters" element="tns:getTipoClienteResponse" />
+  </message>
+  <message name="nombreUsuario">
+    <part name="parameters" element="tns:nombreUsuario" />
+  </message>
+  <message name="nombreUsuarioResponse">
+    <part name="parameters" element="tns:nombreUsuarioResponse" />
+  </message>
+  <message name="getTipoPago">
+    <part name="parameters" element="tns:getTipoPago" />
+  </message>
+  <message name="getTipoPagoResponse">
+    <part name="parameters" element="tns:getTipoPagoResponse" />
+  </message>
+  <message name="crearClienteEmpresa">
+    <part name="parameters" element="tns:crearClienteEmpresa" />
+  </message>
+  <message name="crearClienteEmpresaResponse">
+    <part name="parameters" element="tns:crearClienteEmpresaResponse" />
+  </message>
+  <message name="loginEmpleado">
+    <part name="parameters" element="tns:loginEmpleado" />
+  </message>
+  <message name="loginEmpleadoResponse">
+    <part name="parameters" element="tns:loginEmpleadoResponse" />
+  </message>
+  <message name="depositarCheque">
+    <part name="parameters" element="tns:depositarCheque" />
+  </message>
+  <message name="depositarChequeResponse">
+    <part name="parameters" element="tns:depositarChequeResponse" />
+  </message>
+  <message name="getEstadoCheque">
+    <part name="parameters" element="tns:getEstadoCheque" />
+  </message>
+  <message name="getEstadoChequeResponse">
+    <part name="parameters" element="tns:getEstadoChequeResponse" />
+  </message>
+  <message name="recuperarClave">
+    <part name="parameters" element="tns:recuperarClave" />
+  </message>
+  <message name="recuperarClaveResponse">
+    <part name="parameters" element="tns:recuperarClaveResponse" />
+  </message>
+  <message name="getAgencia">
+    <part name="parameters" element="tns:getAgencia" />
+  </message>
+  <message name="getAgenciaResponse">
+    <part name="parameters" element="tns:getAgenciaResponse" />
+  </message>
+  <message name="getEstadoCtaAR">
+    <part name="parameters" element="tns:getEstadoCtaAR" />
+  </message>
+  <message name="getEstadoCtaARResponse">
+    <part name="parameters" element="tns:getEstadoCtaARResponse" />
+  </message>
+  <message name="getIDAgencia">
+    <part name="parameters" element="tns:getIDAgencia" />
+  </message>
+  <message name="getIDAgenciaResponse">
+    <part name="parameters" element="tns:getIDAgenciaResponse" />
+  </message>
+  <message name="crearAgencia">
+    <part name="parameters" element="tns:crearAgencia" />
+  </message>
+  <message name="crearAgenciaResponse">
+    <part name="parameters" element="tns:crearAgenciaResponse" />
+  </message>
+  <message name="crearGerente">
+    <part name="parameters" element="tns:crearGerente" />
+  </message>
+  <message name="crearGerenteResponse">
+    <part name="parameters" element="tns:crearGerenteResponse" />
+  </message>
+  <message name="crearEmpleado">
+    <part name="parameters" element="tns:crearEmpleado" />
+  </message>
+  <message name="crearEmpleadoResponse">
+    <part name="parameters" element="tns:crearEmpleadoResponse" />
+  </message>
+  <message name="saldoCuenta">
+    <part name="parameters" element="tns:saldoCuenta" />
+  </message>
+  <message name="saldoCuentaResponse">
+    <part name="parameters" element="tns:saldoCuentaResponse" />
+  </message>
+  <message name="cambiarCheque">
+    <part name="parameters" element="tns:cambiarCheque" />
+  </message>
+  <message name="cambiarChequeResponse">
+    <part name="parameters" element="tns:cambiarChequeResponse" />
+  </message>
+  <message name="cobrarMulta">
+    <part name="parameters" element="tns:cobrarMulta" />
+  </message>
+  <message name="cobrarMultaResponse">
+    <part name="parameters" element="tns:cobrarMultaResponse" />
+  </message>
+  <message name="perteneceAgencia">
+    <part name="parameters" element="tns:perteneceAgencia" />
+  </message>
+  <message name="perteneceAgenciaResponse">
+    <part name="parameters" element="tns:perteneceAgenciaResponse" />
+  </message>
+  <message name="solicitarChequera">
+    <part name="parameters" element="tns:solicitarChequera" />
+  </message>
+  <message name="solicitarChequeraResponse">
+    <part name="parameters" element="tns:solicitarChequeraResponse" />
+  </message>
+  <message name="activarDesactivar">
+    <part name="parameters" element="tns:activarDesactivar" />
+  </message>
+  <message name="activarDesactivarResponse">
+    <part name="parameters" element="tns:activarDesactivarResponse" />
+  </message>
+  <message name="depositarEfectivo">
+    <part name="parameters" element="tns:depositarEfectivo" />
+  </message>
+  <message name="depositarEfectivoResponse">
+    <part name="parameters" element="tns:depositarEfectivoResponse" />
+  </message>
+  <message name="depositarCambioCheque">
+    <part name="parameters" element="tns:depositarCambioCheque" />
+  </message>
+  <message name="depositarCambioChequeResponse">
+    <part name="parameters" element="tns:depositarCambioChequeResponse" />
+  </message>
+  <portType name="wsBQ">
+    <operation name="Prestamo">
+      <input wsam:Action="http://wsBQ/wsBQ/PrestamoRequest" message="tns:Prestamo" />
+      <output wsam:Action="http://wsBQ/wsBQ/PrestamoResponse" message="tns:PrestamoResponse" />
+    </operation>
+    <operation name="getEstadoCuenta">
+      <input wsam:Action="http://wsBQ/wsBQ/getEstadoCuentaRequest" message="tns:getEstadoCuenta" />
+      <output wsam:Action="http://wsBQ/wsBQ/getEstadoCuentaResponse" message="tns:getEstadoCuentaResponse" />
+    </operation>
+    <operation name="loginCliente">
+      <input wsam:Action="http://wsBQ/wsBQ/loginClienteRequest" message="tns:loginCliente" />
+      <output wsam:Action="http://wsBQ/wsBQ/loginClienteResponse" message="tns:loginClienteResponse" />
+    </operation>
+    <operation name="cambiarClave">
+      <input wsam:Action="http://wsBQ/wsBQ/cambiarClaveRequest" message="tns:cambiarClave" />
+      <output wsam:Action="http://wsBQ/wsBQ/cambiarClaveResponse" message="tns:cambiarClaveResponse" />
+    </operation>
+    <operation name="getTipoCuenta">
+      <input wsam:Action="http://wsBQ/wsBQ/getTipoCuentaRequest" message="tns:getTipoCuenta" />
+      <output wsam:Action="http://wsBQ/wsBQ/getTipoCuentaResponse" message="tns:getTipoCuentaResponse" />
+    </operation>
+    <operation name="crearEncargado">
+      <input wsam:Action="http://wsBQ/wsBQ/crearEncargadoRequest" message="tns:crearEncargado" />
+      <output wsam:Action="http://wsBQ/wsBQ/crearEncargadoResponse" message="tns:crearEncargadoResponse" />
+    </operation>
+    <operation name="crearCuenta">
+      <input wsam:Action="http://wsBQ/wsBQ/crearCuentaRequest" message="tns:crearCuenta" />
+      <output wsam:Action="http://wsBQ/wsBQ/crearCuentaResponse" message="tns:crearCuentaResponse" />
+    </operation>
+    <operation name="crearClienteParticular">
+      <input wsam:Action="http://wsBQ/wsBQ/crearClienteParticularRequest" message="tns:crearClienteParticular" />
+      <output wsam:Action="http://wsBQ/wsBQ/crearClienteParticularResponse" message="tns:crearClienteParticularResponse" />
+    </operation>
+    <operation name="getTipoEmpleado">
+      <input wsam:Action="http://wsBQ/wsBQ/getTipoEmpleadoRequest" message="tns:getTipoEmpleado" />
+      <output wsam:Action="http://wsBQ/wsBQ/getTipoEmpleadoResponse" message="tns:getTipoEmpleadoResponse" />
+    </operation>
+    <operation name="getTipoCliente">
+      <input wsam:Action="http://wsBQ/wsBQ/getTipoClienteRequest" message="tns:getTipoCliente" />
+      <output wsam:Action="http://wsBQ/wsBQ/getTipoClienteResponse" message="tns:getTipoClienteResponse" />
+    </operation>
+    <operation name="nombreUsuario">
+      <input wsam:Action="http://wsBQ/wsBQ/nombreUsuarioRequest" message="tns:nombreUsuario" />
+      <output wsam:Action="http://wsBQ/wsBQ/nombreUsuarioResponse" message="tns:nombreUsuarioResponse" />
+    </operation>
+    <operation name="getTipoPago">
+      <input wsam:Action="http://wsBQ/wsBQ/getTipoPagoRequest" message="tns:getTipoPago" />
+      <output wsam:Action="http://wsBQ/wsBQ/getTipoPagoResponse" message="tns:getTipoPagoResponse" />
+    </operation>
+    <operation name="crearClienteEmpresa">
+      <input wsam:Action="http://wsBQ/wsBQ/crearClienteEmpresaRequest" message="tns:crearClienteEmpresa" />
+      <output wsam:Action="http://wsBQ/wsBQ/crearClienteEmpresaResponse" message="tns:crearClienteEmpresaResponse" />
+    </operation>
+    <operation name="loginEmpleado">
+      <input wsam:Action="http://wsBQ/wsBQ/loginEmpleadoRequest" message="tns:loginEmpleado" />
+      <output wsam:Action="http://wsBQ/wsBQ/loginEmpleadoResponse" message="tns:loginEmpleadoResponse" />
+    </operation>
+    <operation name="depositarCheque">
+      <input wsam:Action="http://wsBQ/wsBQ/depositarChequeRequest" message="tns:depositarCheque" />
+      <output wsam:Action="http://wsBQ/wsBQ/depositarChequeResponse" message="tns:depositarChequeResponse" />
+    </operation>
+    <operation name="getEstadoCheque">
+      <input wsam:Action="http://wsBQ/wsBQ/getEstadoChequeRequest" message="tns:getEstadoCheque" />
+      <output wsam:Action="http://wsBQ/wsBQ/getEstadoChequeResponse" message="tns:getEstadoChequeResponse" />
+    </operation>
+    <operation name="recuperarClave">
+      <input wsam:Action="http://wsBQ/wsBQ/recuperarClaveRequest" message="tns:recuperarClave" />
+      <output wsam:Action="http://wsBQ/wsBQ/recuperarClaveResponse" message="tns:recuperarClaveResponse" />
+    </operation>
+    <operation name="getAgencia">
+      <input wsam:Action="http://wsBQ/wsBQ/getAgenciaRequest" message="tns:getAgencia" />
+      <output wsam:Action="http://wsBQ/wsBQ/getAgenciaResponse" message="tns:getAgenciaResponse" />
+    </operation>
+    <operation name="getEstadoCtaAR">
+      <input wsam:Action="http://wsBQ/wsBQ/getEstadoCtaARRequest" message="tns:getEstadoCtaAR" />
+      <output wsam:Action="http://wsBQ/wsBQ/getEstadoCtaARResponse" message="tns:getEstadoCtaARResponse" />
+    </operation>
+    <operation name="getIDAgencia">
+      <input wsam:Action="http://wsBQ/wsBQ/getIDAgenciaRequest" message="tns:getIDAgencia" />
+      <output wsam:Action="http://wsBQ/wsBQ/getIDAgenciaResponse" message="tns:getIDAgenciaResponse" />
+    </operation>
+    <operation name="crearAgencia">
+      <input wsam:Action="http://wsBQ/wsBQ/crearAgenciaRequest" message="tns:crearAgencia" />
+      <output wsam:Action="http://wsBQ/wsBQ/crearAgenciaResponse" message="tns:crearAgenciaResponse" />
+    </operation>
+    <operation name="crearGerente">
+      <input wsam:Action="http://wsBQ/wsBQ/crearGerenteRequest" message="tns:crearGerente" />
+      <output wsam:Action="http://wsBQ/wsBQ/crearGerenteResponse" message="tns:crearGerenteResponse" />
+    </operation>
+    <operation name="crearEmpleado">
+      <input wsam:Action="http://wsBQ/wsBQ/crearEmpleadoRequest" message="tns:crearEmpleado" />
+      <output wsam:Action="http://wsBQ/wsBQ/crearEmpleadoResponse" message="tns:crearEmpleadoResponse" />
+    </operation>
+    <operation name="saldoCuenta">
+      <input wsam:Action="http://wsBQ/wsBQ/saldoCuentaRequest" message="tns:saldoCuenta" />
+      <output wsam:Action="http://wsBQ/wsBQ/saldoCuentaResponse" message="tns:saldoCuentaResponse" />
+    </operation>
+    <operation name="cambiarCheque">
+      <input wsam:Action="http://wsBQ/wsBQ/cambiarChequeRequest" message="tns:cambiarCheque" />
+      <output wsam:Action="http://wsBQ/wsBQ/cambiarChequeResponse" message="tns:cambiarChequeResponse" />
+    </operation>
+    <operation name="cobrarMulta">
+      <input wsam:Action="http://wsBQ/wsBQ/cobrarMultaRequest" message="tns:cobrarMulta" />
+      <output wsam:Action="http://wsBQ/wsBQ/cobrarMultaResponse" message="tns:cobrarMultaResponse" />
+    </operation>
+    <operation name="perteneceAgencia">
+      <input wsam:Action="http://wsBQ/wsBQ/perteneceAgenciaRequest" message="tns:perteneceAgencia" />
+      <output wsam:Action="http://wsBQ/wsBQ/perteneceAgenciaResponse" message="tns:perteneceAgenciaResponse" />
+    </operation>
+    <operation name="solicitarChequera">
+      <input wsam:Action="http://wsBQ/wsBQ/solicitarChequeraRequest" message="tns:solicitarChequera" />
+      <output wsam:Action="http://wsBQ/wsBQ/solicitarChequeraResponse" message="tns:solicitarChequeraResponse" />
+    </operation>
+    <operation name="activarDesactivar">
+      <input wsam:Action="http://wsBQ/wsBQ/activarDesactivarRequest" message="tns:activarDesactivar" />
+      <output wsam:Action="http://wsBQ/wsBQ/activarDesactivarResponse" message="tns:activarDesactivarResponse" />
+    </operation>
+    <operation name="depositarEfectivo">
+      <input wsam:Action="http://wsBQ/wsBQ/depositarEfectivoRequest" message="tns:depositarEfectivo" />
+      <output wsam:Action="http://wsBQ/wsBQ/depositarEfectivoResponse" message="tns:depositarEfectivoResponse" />
+    </operation>
+    <operation name="depositarCambioCheque">
+      <input wsam:Action="http://wsBQ/wsBQ/depositarCambioChequeRequest" message="tns:depositarCambioCheque" />
+      <output wsam:Action="http://wsBQ/wsBQ/depositarCambioChequeResponse" message="tns:depositarCambioChequeResponse" />
+    </operation>
+  </portType>
+  <binding name="wsBQPortBinding" type="tns:wsBQ">
+    <soap:binding transport="http://schemas.xmlsoap.org/soap/http" />
+    <operation name="Prestamo">
+      <soap:operation soapAction="" />
+      <input>
+        <soap:body use="literal" />
+      </input>
+      <output>
+        <soap:body use="literal" />
+      </output>
+    </operation>
+    <operation name="getEstadoCuenta">
+      <soap:operation soapAction="" />
+      <input>
+        <soap:body use="literal" />
+      </input>
+      <output>
+        <soap:body use="literal" />
+      </output>
+    </operation>
+    <operation name="loginCliente">
+      <soap:operation soapAction="" />
+      <input>
+        <soap:body use="literal" />
+      </input>
+      <output>
+        <soap:body use="literal" />
+      </output>
+    </operation>
+    <operation name="cambiarClave">
+      <soap:operation soapAction="" />
+      <input>
+        <soap:body use="literal" />
+      </input>
+      <output>
+        <soap:body use="literal" />
+      </output>
+    </operation>
+    <operation name="getTipoCuenta">
+      <soap:operation soapAction="" />
+      <input>
+        <soap:body use="literal" />
+      </input>
+      <output>
+        <soap:body use="literal" />
+      </output>
+    </operation>
+    <operation name="crearEncargado">
+      <soap:operation soapAction="" />
+      <input>
+        <soap:body use="literal" />
+      </input>
+      <output>
+        <soap:body use="literal" />
+      </output>
+    </operation>
+    <operation name="crearCuenta">
+      <soap:operation soapAction="" />
+      <input>
+        <soap:body use="literal" />
+      </input>
+      <output>
+        <soap:body use="literal" />
+      </output>
+    </operation>
+    <operation name="crearClienteParticular">
+      <soap:operation soapAction="" />
+      <input>
+        <soap:body use="literal" />
+      </input>
+      <output>
+        <soap:body use="literal" />
+      </output>
+    </operation>
+    <operation name="getTipoEmpleado">
+      <soap:operation soapAction="" />
+      <input>
+        <soap:body use="literal" />
+      </input>
+      <output>
+        <soap:body use="literal" />
+      </output>
+    </operation>
+    <operation name="getTipoCliente">
+      <soap:operation soapAction="" />
+      <input>
+        <soap:body use="literal" />
+      </input>
+      <output>
+        <soap:body use="literal" />
+      </output>
+    </operation>
+    <operation name="nombreUsuario">
+      <soap:operation soapAction="" />
+      <input>
+        <soap:body use="literal" />
+      </input>
+      <output>
+        <soap:body use="literal" />
+      </output>
+    </operation>
+    <operation name="getTipoPago">
+      <soap:operation soapAction="" />
+      <input>
+        <soap:body use="literal" />
+      </input>
+      <output>
+        <soap:body use="literal" />
+      </output>
+    </operation>
+    <operation name="crearClienteEmpresa">
+      <soap:operation soapAction="" />
+      <input>
+        <soap:body use="literal" />
+      </input>
+      <output>
+        <soap:body use="literal" />
+      </output>
+    </operation>
+    <operation name="loginEmpleado">
+      <soap:operation soapAction="" />
+      <input>
+        <soap:body use="literal" />
+      </input>
+      <output>
+        <soap:body use="literal" />
+      </output>
+    </operation>
+    <operation name="depositarCheque">
+      <soap:operation soapAction="" />
+      <input>
+        <soap:body use="literal" />
+      </input>
+      <output>
+        <soap:body use="literal" />
+      </output>
+    </operation>
+    <operation name="getEstadoCheque">
+      <soap:operation soapAction="" />
+      <input>
+        <soap:body use="literal" />
+      </input>
+      <output>
+        <soap:body use="literal" />
+      </output>
+    </operation>
+    <operation name="recuperarClave">
+      <soap:operation soapAction="" />
+      <input>
+        <soap:body use="literal" />
+      </input>
+      <output>
+        <soap:body use="literal" />
+      </output>
+    </operation>
+    <operation name="getAgencia">
+      <soap:operation soapAction="" />
+      <input>
+        <soap:body use="literal" />
+      </input>
+      <output>
+        <soap:body use="literal" />
+      </output>
+    </operation>
+    <operation name="getEstadoCtaAR">
+      <soap:operation soapAction="" />
+      <input>
+        <soap:body use="literal" />
+      </input>
+      <output>
+        <soap:body use="literal" />
+      </output>
+    </operation>
+    <operation name="getIDAgencia">
+      <soap:operation soapAction="" />
+      <input>
+        <soap:body use="literal" />
+      </input>
+      <output>
+        <soap:body use="literal" />
+      </output>
+    </operation>
+    <operation name="crearAgencia">
+      <soap:operation soapAction="" />
+      <input>
+        <soap:body use="literal" />
+      </input>
+      <output>
+        <soap:body use="literal" />
+      </output>
+    </operation>
+    <operation name="crearGerente">
+      <soap:operation soapAction="" />
+      <input>
+        <soap:body use="literal" />
+      </input>
+      <output>
+        <soap:body use="literal" />
+      </output>
+    </operation>
+    <operation name="crearEmpleado">
+      <soap:operation soapAction="" />
+      <input>
+        <soap:body use="literal" />
+      </input>
+      <output>
+        <soap:body use="literal" />
+      </output>
+    </operation>
+    <operation name="saldoCuenta">
+      <soap:operation soapAction="" />
+      <input>
+        <soap:body use="literal" />
+      </input>
+      <output>
+        <soap:body use="literal" />
+      </output>
+    </operation>
+    <operation name="cambiarCheque">
+      <soap:operation soapAction="" />
+      <input>
+        <soap:body use="literal" />
+      </input>
+      <output>
+        <soap:body use="literal" />
+      </output>
+    </operation>
+    <operation name="cobrarMulta">
+      <soap:operation soapAction="" />
+      <input>
+        <soap:body use="literal" />
+      </input>
+      <output>
+        <soap:body use="literal" />
+      </output>
+    </operation>
+    <operation name="perteneceAgencia">
+      <soap:operation soapAction="" />
+      <input>
+        <soap:body use="literal" />
+      </input>
+      <output>
+        <soap:body use="literal" />
+      </output>
+    </operation>
+    <operation name="solicitarChequera">
+      <soap:operation soapAction="" />
+      <input>
+        <soap:body use="literal" />
+      </input>
+      <output>
+        <soap:body use="literal" />
+      </output>
+    </operation>
+    <operation name="activarDesactivar">
+      <soap:operation soapAction="" />
+      <input>
+        <soap:body use="literal" />
+      </input>
+      <output>
+        <soap:body use="literal" />
+      </output>
+    </operation>
+    <operation name="depositarEfectivo">
+      <soap:operation soapAction="" />
+      <input>
+        <soap:body use="literal" />
+      </input>
+      <output>
+        <soap:body use="literal" />
+      </output>
+    </operation>
+    <operation name="depositarCambioCheque">
+      <soap:operation soapAction="" />
+      <input>
+        <soap:body use="literal" />
+      </input>
+      <output>
+        <soap:body use="literal" />
+      </output>
+    </operation>
+  </binding>
+  <service name="wsBQ">
+    <port name="wsBQPort" binding="tns:wsBQPortBinding">
+      <soap:address location="http://localhost:8080/BanQuetzal/wsBQ" />
+    </port>
+  </service>
+</definitions>
